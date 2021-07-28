@@ -2,19 +2,62 @@
 *{
     font-family: Poppins;
     box-sizing: border-box;
-
 }
 body {
-    background: #f8f8f8;
+    background: #f8f8f8
 }
 
 .heading1 {
     align-content: center;
-    height: 70px;
-    background: white;
+    height: 55px;
     font-size: 35px;
-    width: 100%;
+    background: white;
+    border-bottom: 3px solid #007bff;
 
+}
+.subject_bar a {
+    text-decoration: none;
+    color: black;
+
+}
+
+.images img {
+    width: 358px;
+
+}
+
+.sddimg {
+    position: absolute;
+
+}
+
+.sddlk {
+    padding: 15px;
+    font-size: 22px;
+    position: absolute;
+    top: 288px;
+    left: 7px;
+    background: white;
+    width: 360px;
+    border: 3px solid #007bff;
+    border-radius: 3px;
+    transition: 0.5s;
+}
+.sddlk:hover{
+    color: white;
+    background: #007bff;
+}
+
+.hstlk {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+}
+.geolk {
+    position: absolute;
+    top: 600px;
+    right: 55px;
 }
 
 .rules_box {
@@ -74,3 +117,4 @@ body {
     cursor: pointer;
 
 }
+
