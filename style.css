@@ -4,15 +4,19 @@
     box-sizing: border-box;
 }
 body {
-    background: #f8f8f8
+    background: white;
+    margin: 0;
+}
+header {
+    background: #303141;
+    padding: 10px;
 }
 
 .heading1 {
-    align-content: center;
     height: 55px;
     font-size: 35px;
-    background: white;
-    border-bottom: 3px solid #007bff;
+
+    color: white;
 
 }
 .subject_bar a {
@@ -23,11 +27,18 @@ body {
 
 .images img {
     width: 358px;
+    height: 198px;
 
 }
 
 .sddimg {
     position: absolute;
+
+}
+
+.hstimg {
+    position: absolute;
+    left: 600px;
 
 }
 
@@ -43,16 +54,23 @@ body {
     border-radius: 3px;
     transition: 0.5s;
 }
-.sddlk:hover{
+.sddlk:hover,
+.hstlk:hover{
     color: white;
     background: #007bff;
 }
 
 .hstlk {
+    width: 360px;
+    padding: 15px;
+    font-size: 22px;
+    background: white;
+    border: 3px solid #007bff;
+    transition: 0.5s;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform:translate(-50%, -50%);
+    top: 288px;
+    left: 600px;
+
 }
 .geolk {
     position: absolute;
