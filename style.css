@@ -3,6 +3,15 @@
     font-family: Poppins;
     box-sizing: border-box;
 }
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
 body {
     background: white;
     margin: 0;
@@ -15,10 +24,17 @@ header {
 .heading1 {
     height: 55px;
     font-size: 35px;
-
     color: white;
-
 }
+
+.heading2{
+    position: absolute;
+    top: 125px;
+    font-size: 50px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
 .subject_bar a {
     text-decoration: none;
     color: black;
@@ -79,7 +95,7 @@ header {
 }
 
 .rules_box {
-    display: none;
+    display:none;
     color: white;
     width: 540px;
     background: #007bff;
@@ -105,7 +121,7 @@ header {
     padding: 15px 35px;
 
 }
-.rules_box .rules. info {
+.rules_box .rules .info {
     margin: 5px 0;
     font-size: 17px;
 
@@ -133,6 +149,7 @@ header {
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
+    border-radius: 3px;
 
 }
 
