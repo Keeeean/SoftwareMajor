@@ -21,13 +21,13 @@ header {
     padding: 10px;
 }
 
-.heading1 {
+#heading1 {
     height: 55px;
     font-size: 35px;
     color: white;
 }
 
-.heading2{
+#heading2{
     position: absolute;
     top: 125px;
     font-size: 50px;
@@ -35,30 +35,31 @@ header {
     transform: translate(-50%, 0%);
 }
 
-.subject_bar a {
+#subject_bar a {
     text-decoration: none;
     color: black;
 
 }
 
-.images img {
+#images img {
     width: 358px;
     height: 198px;
-
 }
 
-.sddimg {
+#sddimg {
     position: absolute;
+    left: 7px;
+    top: 100px;
 
 }
 
-.hstimg {
+#hstimg {
     position: absolute;
     left: 600px;
 
 }
 
-.sddlk {
+#sddlk {
     padding: 15px;
     font-size: 22px;
     position: absolute;
@@ -70,13 +71,13 @@ header {
     border-radius: 3px;
     transition: 0.5s;
 }
-.sddlk:hover,
-.hstlk:hover{
+#sddlk:hover,
+#hstlk:hover{
     color: white;
     background: #007bff;
 }
 
-.hstlk {
+#hstlk {
     width: 360px;
     padding: 15px;
     font-size: 22px;
@@ -88,16 +89,15 @@ header {
     left: 600px;
 
 }
-.geolk {
+#geolk {
     position: absolute;
     top: 600px;
     right: 55px;
 }
 
-.rules_box {
-    display:none;
+#rules_box {
     color: white;
-    width: 540px;
+    width: 550px;
     background: #007bff;
     border-radius: 5px;
     position: absolute;
@@ -107,7 +107,7 @@ header {
 
 }
 
-.rules_box .rules_title {
+#rules_box #rules_title {
     height: 60px;
     width: 100%;
     border-bottom: 1px solid lightgrey;
@@ -117,20 +117,20 @@ header {
     font-size: 20px;
     font-weight: 600;
 }
-.rules_box .rules{
+#rules_box #rules{
     padding: 15px 35px;
 
 }
-.rules_box .rules .info {
+#rules_box #rules .info {
     margin: 5px 0;
     font-size: 17px;
 
 }
-.rules_box .rules .info span {
+#rules_box #rules .info span {
     font-weight: 600;
 
 }
-.rules_box .rules_buttons {
+#rules_box .rules_buttons {
     height: 60px;
     display: flex;
     align-items: center;
@@ -139,7 +139,7 @@ header {
     border-top: 1px solid lightgrey;
 
 }
-.rules_box .rules_buttons button {
+#rules_box .rules_buttons button {
     margin: 0 5px;
     height: 40px;
     width: 100px;
@@ -152,4 +152,165 @@ header {
     border-radius: 3px;
 
 }
+
+#start_btn {
+    position: absolute;
+    left: 50%;
+    top: 300px;
+    transform: translate(-50%, 0%);
+    font-size: 35px;
+    background: white;
+    border-color: #007bff;
+    padding: 10px;
+    border-radius: 2px;
+    width: 150px;
+    transition: 0.5ms;
+    box-shadow: 0 3px 5px 1px rgba(0,0,0,0.1);
+
+}
+
+#start_btn:hover {
+    cursor:pointer;
+    background:#303141;
+    color: white;
+}
+
+.quiz_box{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 550px;
+    background: #303141;
+    border-radius: 5px;
+
+}
+.quiz_box header {
+    position: relative;
+    z-index: 99;
+    height: 70px;
+    padding: 0 30px;
+    background: #303141;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px 5px 0 0 ;
+    box-shadow: 0 3px 5px 1px rgba(0,0,0,0.1);
+}
+
+.quiz_box header .title {
+    font-size: 20px;
+    font-weight: 300;
+
+}
+.quiz_box header .timer {
+    display: flex;
+    align-items: center;
+    justify-content:  space-between;
+    width: 145px;
+    height: 45px;
+    background: #cce5ff;
+    border: 1px solid #b8daff;
+    border-radius: 5px;
+    padding: 0 8px;
+}
+
+.quiz_box header .timer .time_text {
+    font-weight: 400;
+    font-size: 17px;
+    user-select: none;
+}
+
+.quiz_box header .timer .timer_sec {
+    font-size: 18px;
+    font-weight: 500;
+    background: #343a40;
+    height: 30px;
+    width: 45px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+    border: 1px solid #343a40;
+
+}
+
+.quiz_box section {
+    padding: 25px 30px 20px 30px;
+
+}
+.quiz_box section .que_text {
+    font-size: 25px;
+    font-weight: 300;
+
+}
+
+.quiz_box section .option_list {
+    padding: 20px 0;
+    display: block;
+
+}
+section .option_list .option {
+    background: aliceblue;
+    border: 1px solid #84c5fe;
+    border-radius: 5px;
+    padding: 8px 15px;
+    margin-bottom: 15px;
+    font-size: 17px;
+    display: flex;
+    align-items:  center;
+    justify-content: space-between;
+    cursor: pointer;
+    color: black;
+    font-weight: 300;
+
+}
+section .option_list .option:hover {
+    color: #004085;
+    background: #cce5ff;
+    border-color: #b8daff;
+}
+
+.option_list .option:last-child {
+    margin-bottom: 0;
+}
+
+.quiz_box footer {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.quiz_box footer .total_que span{
+    display: flex;
+    user-select: none;
+    padding: 0 5px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+footer .next_btn {
+    height: 40px;
+    padding: 0 13px;
+    font-size: 18px;
+    font-weight: 400;
+    outline: none;
+    margin-right: 15px;
+    background: aliceblue;
+    cursor: pointer;
+    border: 1px solid #84c5fe;
+    border-radius: 5px;
+}
+
+footer .next_btn:hover {
+    color: #004085;
+    background: #cce5ff;
+    border-color: #b8daff;
+}
+
+
+
 
