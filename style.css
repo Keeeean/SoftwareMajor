@@ -95,7 +95,7 @@ header {
     right: 55px;
 }
 
-#rules_box {
+.rules_box {
     color: white;
     width: 550px;
     background: #007bff;
@@ -103,11 +103,14 @@ header {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+
 
 }
 
-#rules_box #rules_title {
+.rules_box .rules_title {
     height: 60px;
     width: 100%;
     border-bottom: 1px solid lightgrey;
@@ -117,20 +120,20 @@ header {
     font-size: 20px;
     font-weight: 600;
 }
-#rules_box #rules{
+.rules_box .rules{
     padding: 15px 35px;
 
 }
-#rules_box #rules .info {
+.rules_box .rules .info {
     margin: 5px 0;
     font-size: 17px;
 
 }
-#rules_box #rules .info span {
+.rules_box .rules .info span {
     font-weight: 600;
 
 }
-#rules_box .rules_buttons {
+.rules_box .rules_buttons {
     height: 60px;
     display: flex;
     align-items: center;
@@ -139,7 +142,7 @@ header {
     border-top: 1px solid lightgrey;
 
 }
-#rules_box .rules_buttons button {
+.rules_box .rules_buttons button {
     margin: 0 5px;
     height: 40px;
     width: 100px;
@@ -153,7 +156,7 @@ header {
 
 }
 
-#start_btn {
+.start_btn button{
     position: absolute;
     left: 50%;
     top: 300px;
@@ -163,13 +166,13 @@ header {
     border-color: #007bff;
     padding: 10px;
     border-radius: 2px;
-    width: 150px;
+    width: 300px;
     transition: 0.5ms;
     box-shadow: 0 3px 5px 1px rgba(0,0,0,0.1);
 
 }
 
-#start_btn:hover {
+.start_btn button:hover {
     cursor:pointer;
     background:#303141;
     color: white;
@@ -180,10 +183,12 @@ header {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.9);
     width: 550px;
     background: #303141;
     border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
 
 }
 .quiz_box header {
@@ -311,6 +316,43 @@ footer .next_btn:hover {
     border-color: #b8daff;
 }
 
+.result_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 450px;
+    padding: 25px 30px;
+    border-radius: 5px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    pointer-events: none;
 
+}
+
+.result_box .complete_text {
+    font-size: 20px;
+    font-weight: 500;
+
+}
+.results_ box .buttons {
+    display: flex;
+    margin: 20px 0;
+}
+.result_box .buttons button {
+    margin: 0 10px;
+    height: 40px;
+    padding: 0 20px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+
+}
 
 
