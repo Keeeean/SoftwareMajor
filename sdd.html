@@ -18,9 +18,11 @@
         SDD Quiz
     </div>
 
-    <div class="test_btn"><button onclick="driver()">Test</button></div>
 
-    <div class="start_btn"><button onclick="SDDQuiz()">Start SDD Quiz</button></div>
+    <div class="test_btn"><button onclick="driver()">Test</button></div>
+    <div class="start_btn"><button onclick="SDDQuiz(); ">Start SDD Quiz</button></div>
+
+   <!-- Rules Box Formatting-->
 
     <div class="rules_box" >
         <div class="rules_title">
@@ -33,10 +35,12 @@
             <div class="info">4. You cannot exit from the quiz.</div>
         </div>
         <div class="rules_buttons">
-            <button id="quit">Go Back</button>
-            <button id="restart">Continue</button>
+            <button class="quit">Go Back</button>
+            <button class="restart">Continue</button>
         </div>
     </div>
+
+   <!-- Quiz Box Formatting -->
 
     <div class="quiz_box">
         <header>
@@ -45,13 +49,14 @@
                 <div class="time_text">Time Left</div>
                 <div class="timer_sec">15</div>
             </div>
+            <div class="time_line"></div>
         </header>
         <section>
             <div class="que_text">
-                <span>Which method can represent negative numbers in binary?</span>
+                <!--<span>Which method can represent negative numbers in binary?</span>-->
             </div>
             <div class="option_list">
-                <div class="option">
+                <!--<div class="option">
                     IEEE-754
                 </div>
                 <div class="option">
@@ -62,22 +67,24 @@
                 </div>
                 <div class="option">
                     ASCII
-                </div>
+                </div>-->
             </div>
         </section>
 
         <footer>
             <div class="total_que">
-                <span>2 of 15 Questions</span>
+                <span><p>2</p>out of<p>5</p>Questions</span>
             </div>
             <button class="next_btn">Next Q</button>
         </footer>
     </div>
 
+    <!--Result Box Formatting -->
+
     <div class="result_box">
         <div class="complete_text">You've completed the Quiz</div>
         <div class="score_text">
-            You got <p>2</p> out of <p>15</p>
+            <!--<span>You got <p>2</p> out of <p>15</p></span>-->
         </div>
         <div class="buttons">
             <button class="restart">Replay Quiz</button>

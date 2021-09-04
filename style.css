@@ -98,7 +98,7 @@ header {
 .rules_box {
     color: white;
     width: 550px;
-    background: #007bff;
+    background: #303141;
     border-radius: 5px;
     position: absolute;
     top: 50%;
@@ -159,13 +159,13 @@ header {
 .start_btn button{
     position: absolute;
     left: 50%;
-    top: 300px;
-    transform: translate(-50%, 0%);
+    top: 50%;
+    transform: translate(-50%, -50%);
     font-size: 35px;
     background: white;
     border-color: #007bff;
     padding: 10px;
-    border-radius: 2px;
+    border-radius: 5px;
     width: 300px;
     transition: 0.5ms;
     box-shadow: 0 3px 5px 1px rgba(0,0,0,0.1);
@@ -298,6 +298,7 @@ section .option_list .option:hover {
 }
 
 footer .next_btn {
+    display: none;
     height: 40px;
     padding: 0 13px;
     font-size: 18px;
@@ -339,7 +340,7 @@ footer .next_btn:hover {
     font-weight: 500;
 
 }
-.results_ box .buttons {
+.results_box .buttons {
     display: flex;
     margin: 20px 0;
 }
@@ -355,4 +356,43 @@ footer .next_btn:hover {
 
 }
 
+.rules_box.activeInfo,
+.quiz_box.activeQuiz,
+.result_box.activeResult{
+    z-index: 5;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
 
+.start_btn,
+.rules_box,
+.quiz_box,
+.result_box {
+    transition: all 0.3s ease;
+}
+
+.option_list .option.correct {
+    color: #155724;
+    background: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.option_list .option.incorrect {
+    color: #721c24;
+    background: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.option_list .option.disabled {
+    pointer-events: none;
+}
+
+.quiz_box header .time_line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: aqua;
+
+}
