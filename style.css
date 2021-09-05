@@ -86,7 +86,8 @@ header {
 }
 
 #sddlk:hover,
-#iptlk:hover{
+#iptlk:hover,
+#geolk:hover{
     color: white;
     background: #007bff;
 }
@@ -94,7 +95,8 @@ header {
 #iptlk {
     position: absolute;
     top: 350px;
-    left: 600px;
+    left: 50%;
+    transform: translate(-50%, 0%);
 
 }
 #geolk {
