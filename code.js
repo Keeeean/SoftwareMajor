@@ -1,13 +1,34 @@
-function driver() {
+function driver() { /* testing whether or not the questions array has changed or questions have been inputted. */
     console.log(questions);
+    if(questions.length === 0){
+        console.log("A quiz and their questions have not been selected yet.");
+    }
+    if(questions.length > 0){
+        console.log("Questions have been selected.");
+    }
 }
-//SDDs HTML Start Quiz Button is clicked
+
+/*SDDs HTML Start Quiz Button is clicked*/
 
 function SDDQuiz() {
     questions = SDDQuestions(); // forming the questions array
     rules_box.classList.add("activeInfo");
     start_btn.style.display = "none";
 }
+
+function GEOQuiz(){
+    questions = GEOQuestions();
+    rules_box.classList.add("activeInfo");
+    start_btn.style.display = "none";
+}
+
+function IPTQuiz(){
+    questions = IPTQuestions();
+    rules_box.classList.add("activeInfo");
+    start_btn.style.display = "none";
+}
+
+// declaring all constants that will be used throughout the system.
 
 const start_btn = document.querySelector(".start_btn button");
 const rules_box = document.querySelector(".rules_box");
@@ -18,12 +39,18 @@ const option_list = document.querySelector(".option_list");
 const timeCount = quiz_box.querySelector(".timer .timer_sec");
 const timeLine = quiz_box.querySelector("header .time_line");
 const timeOff  = quiz_box.querySelector("header .time_text");
+const next_btn = quiz_box.querySelector(".next_btn");
+const result_box = document.querySelector(".result_box");
+const restart_quiz = result_box.querySelector(".buttons .restart");
 
+/*making the exit button in the information box so that it exits out the information box and back to the starting screen.*/
 
 exit_btn.onclick = ()=>{
     rules_box.classList.remove("activeInfo");
     start_btn.style.display = "block";
 }
+
+ /*pressing the continue button will start the quiz.*/
 
 continue_btn.onclick = ()=> {
     rules_box.classList.remove("activeInfo");
@@ -34,6 +61,9 @@ continue_btn.onclick = ()=> {
     startTimerLine(0);
 }
 
+/* variables that are substituted for updating certain elements of the HTML throughout the time the quiz is active.*/
+
+
 let que_count = 0;
 let que_numb = 1;
 let counter;
@@ -43,20 +73,13 @@ let widthValue = 0;
 let userScore = 0;
 
 
-const next_btn = quiz_box.querySelector(".next_btn");
-const result_box = document.querySelector(".result_box");
-const restart_quiz = result_box.querySelector(".buttons .restart");
-
-
 restart_quiz.onclick = ()=>{
     window.location.reload();
 }
 
-
-
-// we need to make so that when the "next button" is clicked, it will show the next question along with the
-// options of new question, as well as updating the current question out of how many there is in total.
-
+ /*we need to make so that when the "next Q" is clicked, it will show the next question along with the
+ options of new question, as well as updating the current question out of how many there is in total.
+ if the "next Q" button is clicked when its the last question, show the result box.*/
 next_btn.onclick = () =>{
     if(que_count < questions.length - 1){
         que_count++;
@@ -77,7 +100,7 @@ next_btn.onclick = () =>{
 
 }
 
-function showQuestions(index) { // shows the current questions
+function showQuestions(index) { /*shows the current question and its related options.*/
     const que_text = document.querySelector(".que_text");
 
     let que_tag = '<span>' + questions[index].numb + ". " + questions[index].question + '</span>';
@@ -91,10 +114,11 @@ function showQuestions(index) { // shows the current questions
     const option = option_list.querySelectorAll(".option");
     for (let i = 0; i < option.length; i++) {
         option[i].setAttribute("onclick", "optionSelected(this)");
+    /*for each question and their related options, we need to disable all other options so that the user cannot change their answer.*/
     }
 }
-
-
+/*detecting whether or not the user selected answer is correct.
+ if user answer is wrong, show the correct answer.*/
 function optionSelected(answer) {
     clearInterval(counter);
     clearInterval(counterLine);
@@ -117,13 +141,15 @@ function optionSelected(answer) {
             }
         }
     }
-    // have to disable the user from selecting another option.
+    /* have to disable the user from selecting another option.*/
     for (let i = 0; i < allOptions; i++) {
         option_list.children[i].classList.add("disabled");
     }
     next_btn.style.display = "block";
 }
-
+ /*starting the timer to tick down from 15s at second intervals, updating HTML element of time.
+ if the timer reaches 0, the options are disabled and the answer is shown.
+*/
 function startTimer(time){
     counter = setInterval(timer, 1000);
     function timer(){
@@ -154,6 +180,8 @@ function startTimer(time){
         }
     }
 }
+// function to update the time line so that it has an increasing width, going left to right.
+// reaches max width at when the time reaches 0.
 
 function startTimerLine(time) {
     counterLine = setInterval(timer, 29);
@@ -166,12 +194,16 @@ function startTimerLine(time) {
     }
 }
 
+// updating the question counter at the footer of the quiz box, so that it shows the user which question they are currently on.
+
 
 function queCounter(index){
     const bottom_ques_counter = quiz_box.querySelector(".total_que");
     bottom_ques_counter.innerHTML = '<span><p>' + index + '</p>of<p>' + questions.length + '</p>Questions</span>';
 
 }
+
+// showing the result box after all the questions are finished and the score of the user.
 
 function showResultBox(){
     rules_box.classList.remove("activeInfo");
