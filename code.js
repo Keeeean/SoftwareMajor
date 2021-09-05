@@ -42,6 +42,8 @@ const timeOff  = quiz_box.querySelector("header .time_text");
 const next_btn = quiz_box.querySelector(".next_btn");
 const result_box = document.querySelector(".result_box");
 const restart_quiz = result_box.querySelector(".buttons .restart");
+const quit_quiz = result_box.querySelector(".buttons .quit");
+
 
 /*making the exit button in the information box so that it exits out the information box and back to the starting screen.*/
 
@@ -74,6 +76,24 @@ let userScore = 0;
 
 
 restart_quiz.onclick = ()=>{
+    result_box.classList.remove("activeResult");
+    quiz_box.classList.add("activeQuiz");
+    que_count = 0;
+    que_numb = 1;
+    timeValue = 15;
+    widthValue = 0;
+    userScore = 0;
+    showQuestions(que_count);
+    queCounter(que_numb);
+    clearInterval(counter);
+    startTimer(timeValue);
+    clearInterval(counterLine);
+    startTimerLine(widthValue);
+    next_btn.style.display = "none";
+
+}
+
+quit_quiz.onclick = ()=>{
     window.location.reload();
 }
 
@@ -92,11 +112,13 @@ next_btn.onclick = () =>{
         startTimerLine(widthValue);
         next_btn.style.display = "none";
         timeOff.textContent = "Time Left";
+
     }
     else {
         console.log("Questions completed.");
         showResultBox();
     }
+
 
 }
 
@@ -146,6 +168,8 @@ function optionSelected(answer) {
         option_list.children[i].classList.add("disabled");
     }
     next_btn.style.display = "block";
+    console.log(que_count);
+    console.log(que_numb);
 }
  /*starting the timer to tick down from 15s at second intervals, updating HTML element of time.
  if the timer reaches 0, the options are disabled and the answer is shown.
@@ -199,7 +223,7 @@ function startTimerLine(time) {
 
 function queCounter(index){
     const bottom_ques_counter = quiz_box.querySelector(".total_que");
-    bottom_ques_counter.innerHTML = '<span><p>' + index + '</p>of<p>' + questions.length + '</p>Questions</span>';
+    bottom_ques_counter.innerHTML = '<span> ' + index + ' of ' + questions.length + ' Questions</span>';
 
 }
 
